@@ -1,21 +1,22 @@
-const express = require('express');
-const http = require('http');
-const realTimeServer = require('./realTimeServer');
-const path = require('path');
+const express = require("express");
+const { createServer } = require("http");
+const realTimeServer = require("./realTimeServer");
+const path = require("path");
+const cookieParser = require("cookie-parser");
 
 const app = express();
-const httpserver = http.createServer(app);
+const httpServer = createServer(app);
 
-app.set('port', process.env.PORT || 3000);
+app.set("port", process.env.PORT || 3000);
+app.set("views", path.join(__dirname, "views"));
+app.use(cookieParser());
 
-app.set('views', path.join(__dirname, 'views'));
+app.use(require("./routes"));
 
-app.use(require('./routes'));
+app.use(express.static(path.join(__dirname, "public")));
 
-app.use(express.static(path.join(__dirname, 'public')));
-
-httpserver.listen(app.get('port'), () => {
-    console.log(`Servidor escuchando en el puerto ${app.get('port')}`);
+httpServer.listen(app.get("port"), () => {
+  console.log("La aplicación esta corriendo en el puerto ", app.get("port"));
 });
 
-realTimeServer(httpserver);
+realTimeServer(httpServer);

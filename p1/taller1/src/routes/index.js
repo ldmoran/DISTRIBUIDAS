@@ -1,12 +1,15 @@
-const express = require('express');
-const router = express.Router();//módulo para manejar rutas
-const path = require('path');//módulo para trabajar con rutas de archivos
+const express = require("express");
+const router = express.Router();
+const path = require("path");
+const isLoggedIn = require("../middleware/isLoggedIn");
+const views = path.join(__dirname, "/../views");
 
-const views = path.join(__dirname, '/../views');//ruta de la carpeta de vistas
-router.get('/', (req, res) => {
-    res.sendFile(views + "/index.html");//enviar el archivo index.html como respuesta a la ruta raíz
+router.get("/", isLoggedIn, (req, res) => {
+  res.sendFile(views + "/index.html");
 });
-router.get('/register', (req, res) => {
-    res.sendFile(views + "/register.html");//enviar el archivo chat.html como respuesta a la ruta /chat
+
+router.get("/register", (req, res) => {
+  res.sendFile(views + "/register.html");
 });
-module.exports = router;//exportar el router para usarlo en el archivo principal
+
+module.exports = router;
