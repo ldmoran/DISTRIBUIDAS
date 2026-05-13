@@ -53,6 +53,7 @@ module.exports = httpServer => {
             });
         });
 
+        // Aviso de "escribiendo" para el resto de clientes.
         socket.on("typing", () => {
             const cookies = parseCookies(socket.handshake.headers.cookie || "");
             const user = cookies.username;
@@ -61,6 +62,7 @@ module.exports = httpServer => {
             socket.broadcast.emit("typing", { user });
         });
 
+        // Corte del aviso cuando el usuario deja de escribir.
         socket.on("stopTyping", () => {
             const cookies = parseCookies(socket.handshake.headers.cookie || "");
             const user = cookies.username;

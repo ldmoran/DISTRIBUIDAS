@@ -24,6 +24,7 @@ send.addEventListener('click', () => {
     stopTyping();
 });
 
+// Debounce simple para avisos de escritura.
 inputMessage.addEventListener('input', () => {
     const value = inputMessage.value.trim();
 
@@ -85,12 +86,14 @@ socket.on('avatarUpdated', ({ username, avatarUrl }) => {
     }
 });
 
+// Mostrar aviso de escritura de otros usuarios.
 socket.on('typing', ({ user }) => {
     if (!typingIndicator) return;
     typingIndicator.textContent = `${user} esta escribiendo...`;
     typingIndicator.classList.add('is-visible');
 });
 
+// Ocultar aviso cuando termina la escritura.
 socket.on('stopTyping', ({ user }) => {
     if (!typingIndicator) return;
 
