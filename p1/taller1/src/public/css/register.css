@@ -2,22 +2,30 @@ main {
     margin-top: 50px;
     display: flex;
     justify-content: center;
-    background-color: #ffffff; /* Fondo blanco institucional */
+  background-color: transparent;
   }
   
   main form {
-    width: 50%;
-    padding: 20px;
+    width: min(520px, 90%);
+    padding: 28px 24px;
     border: 2px solid #006633; /* Borde verde institucional */
-    border-radius: 8px;
-    background-color: #f9f9f9; /* Suave contraste */
+    border-radius: 14px;
+    background-color: var(--surface);
+    box-shadow: var(--shadow-strong);
   }
   
   main form .input-group label {
     text-align: center;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 6px;
+    font-weight: 600;
     color: #006633; /* Verde institucional */
+  }
+
+  main form .input-group input[type="file"] {
+    border: 1px dashed rgba(11, 18, 22, 0.2);
+    background: rgba(11, 18, 22, 0.03);
+    padding: 10px;
+    border-radius: 10px;
   }
   
   main form .button-container {
@@ -28,16 +36,21 @@ main {
   main form .button-container button {
     background-color: #006633; /* Verde institucional */
     color: #ffffff; /* Texto blanco */
-    font-weight: bold;
+    font-weight: 700;
     padding: 10px 20px;
     border: none;
-    border-radius: 6px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
   
   main form .button-container button:hover {
     background-color: #ffd700; /* Amarillo institucional al hover */
     color: #000000; /* Texto negro para contraste */
+    transform: translateY(-1px);
+  }
+
+  body[data-theme="dark"] main form {
+    border-color: rgba(214, 180, 62, 0.4);
   }
   

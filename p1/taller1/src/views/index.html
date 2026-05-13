@@ -3,79 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/chat.css">
+
     <title>ESPEChat</title>
 </head>
-<body>
-    <header>
-        <h1>ESPEChat</h1>
-    </header>
-    <main>
-        <div id="all-messages">
-            <div class="message">
-                <div class="image-container">
-                    <img src="/img/WhatsApp Image 2026-05-07 at 21.46.40.jpeg">
-                    <div class="message-body">
-                        <div class="user-info">
-                            <span class="username">John Doe</span>
-                            <span class="time">10:00 AM</span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-                <div id="all-messages">
-            <div class="message">
-                <div class="image-container">
-                    <img src="/img/WhatsApp Image 2026-05-07 at 21.46.40.jpeg">
-                    <div class="message-body">
-                        <div class="user-info">
-                            <span class="username">John Doe</span>
-                            <span class="time">10:00 AM</span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-                <div id="all-messages">
-            <div class="message">
-                <div class="image-container">
-                    <img src="/img/WhatsApp Image 2026-05-07 at 21.46.40.jpeg">
-                    <div class="message-body">
-                        <div class="user-info">
-                            <span class="username">John Doe</span>
-                            <span class="time">10:00 AM</span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-                <div id="all-messages">
-            <div class="message">
-                <div class="image-container">
-                    <img src="/img/WhatsApp Image 2026-05-07 at 21.46.40.jpeg">
-                    <div class="message-body">
-                        <div class="user-info">
-                            <span class="username">John Doe</span>
-                            <span class="time">10:00 AM</span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="send-message">
-            <input type="text" id="message" placeholder="Escribe tu mensaje...">
-            <button id="send-message" class="btn secondary">Enviar</button>
-        </div>
-    </main>
-    <p>Bienvenidos a ESPEChat, la aplicacion de chat en tiempo reals.</p>
 
-    <script src="/socket.io/socket.io.js"> </script>
-    <script src="js/script.js"></script>
+<body>
+
+    <header class="site-header">
+        <div class="header-row">
+            <div class="brand">
+                <div class="brand-mark">ESPE</div>
+                <div class="brand-text">
+                    <h1>ESPEChat</h1>
+                    <p>Universidad de las Fuerzas Armadas ESPE</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="profile-chip">
+                    <img id="current-avatar" src="/img/avatar-default.svg" alt="Tu avatar">
+                    <span id="current-user">Usuario</span>
+                </div>
+                <form id="avatar-form" class="avatar-form">
+                    <input type="file" id="avatar-input" name="avatar" accept="image/png, image/jpeg">
+                    <button id="avatar-upload" class="theme-toggle" type="button">
+                        Actualizar foto
+                    </button>
+                </form>
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">
+                    Modo oscuro
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="chat-shell">
+        <section class="chat-panel">
+            <div id="all-messages">
+            </div>
+
+            <div id="typing-indicator" class="typing-indicator" aria-live="polite"></div>
+
+            <div class="send-message">
+
+            <input 
+                type="text" 
+                id="message" 
+                placeholder="Escribe tu mensaje..."
+            >
+
+            <button id="send-message" class="btn secondary">
+                Enviar
+            </button>
+
+            </div>
+        </section>
+    </main>
+
+    <p class="welcome">
+        Bienvenidos a ESPEChat, la aplicación de chat en tiempo real.
+    </p>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/script.js"></script>
+
 </body>
 </html>
