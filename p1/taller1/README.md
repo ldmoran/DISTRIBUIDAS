@@ -1,6 +1,6 @@
 
 # ESPEChat
-
+# link del video: https://youtu.be/ybjHkR1Y1Jo
 ## Descripcion
 Yo implemente un chat en tiempo real con soporte de usuarios, fotos de perfil y persistencia en MongoDB. Incluye indicador de escritura, edicion y eliminacion de mensajes, y modo oscuro en el frontend.
 
