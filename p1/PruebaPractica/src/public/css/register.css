@@ -1,0 +1,49 @@
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.register-card {
+  width: min(420px, 92vw);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-soft);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: 16px;
+}
+
+.register-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 47, 47, 0.2);
+  color: #ffb2b2;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.register-card h1 {
+  font-size: 1.6rem;
+}
+
+.register-card p {
+  color: var(--text-muted);
+}
+
+.register-card form {
+  display: grid;
+  gap: 12px;
+}

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <title>ESPE-Alert</title>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="dashboard">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <div>
+          <p class="brand-title">ESPE-Alert</p>
+          <p class="brand-subtitle">Centro de Control de Emergencias</p>
+        </div>
+      </div>
+      <div class="status-pill">
+        <span class="pulse"></span>
+        Sistema activo
+      </div>
+      <button type="button" class="theme-toggle" data-theme-toggle>
+        Modo claro
+      </button>
+    </header>
+
+    <main class="layout">
+      <section class="panel panel-form">
+        <h2>Emitir alerta</h2>
+        <p class="panel-hint">
+          Envia avisos en tiempo real para toda la red.
+        </p>
+        <form id="alert-form">
+          <label for="alert-type">Tipo de alerta</label>
+          <select id="alert-type">
+            <option value="critical">Alerta critica</option>
+            <option value="warning">Alerta preventiva</option>
+            <option value="info">Aviso informativo</option>
+          </select>
+
+          <label for="alert-message">Mensaje</label>
+          <textarea
+            id="alert-message"
+            rows="4"
+            placeholder="Describe la situacion con claridad"
+          ></textarea>
+
+          <button type="submit" class="btn primary">Transmitir alerta</button>
+        </form>
+      </section>
+
+      <section class="panel panel-feed">
+        <div class="panel-head">
+          <h2>Panel de alertas</h2>
+          <span class="panel-tag">Tiempo real</span>
+        </div>
+        <div id="alert-list" class="alert-list"></div>
+      </section>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

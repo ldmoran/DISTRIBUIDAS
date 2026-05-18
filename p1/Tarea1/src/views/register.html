@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/register.css">
+    <title>Regístrate</title>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-row">
+            <div class="brand">
+                <div class="brand-mark">ESPE</div>
+                <div class="brand-text">
+                    <h1>ESPEChat</h1>
+                    <p>Universidad de las Fuerzas Armadas ESPE</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">
+                    Modo oscuro
+                </button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <form action="/register" method="post" enctype="multipart/form-data" class="card">
+            <h2>Regístrate</h2>
+
+            <div class="input-group">
+                <label for="username">Ingresa tu nombre de usuario</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="input-group">
+                <label for="avatar">Sube tu foto (JPG/PNG)</label>
+                <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+            </div>
+
+            <div class="button-container">
+                <button type="submit" class="btn primary" id="login">
+                    Entrar al Chat
+                </button>
+            </div>
+
+        </form>
+    </main>
+    <script src="js/register.js"></script>
+</body>
+</html>

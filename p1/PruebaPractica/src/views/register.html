@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/register.css" />
+    <title>Registro de emisor</title>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="register">
+    <main class="register-card">
+      <div class="register-top">
+        <div class="badge">ESPE-Alert</div>
+        <button type="button" class="theme-toggle" data-theme-toggle>
+          Modo claro
+        </button>
+      </div>
+      <h1>Registro de emisor</h1>
+      <p>
+        Identificate una vez para emitir alertas en el sistema.
+      </p>
+      <form id="form">
+        <label for="username">Nombre del emisor</label>
+        <input type="text" id="username" placeholder="Tu nombre" />
+        <button type="submit" class="btn primary">Ingresar</button>
+      </form>
+    </main>
+    <script src="js/theme.js"></script>
+    <script src="js/register.js"></script>
+  </body>
+</html>
